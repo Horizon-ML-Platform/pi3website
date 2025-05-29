@@ -4,7 +4,7 @@ from datetime import datetime
 from config import Config
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='docs/static', template_folder='docs/templates')
 app.config.from_object(Config)
 
 # Update database URI for Heroku

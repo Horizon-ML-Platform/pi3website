@@ -13,7 +13,7 @@ if os.environ.get('DATABASE_URL'):
 
 # Configure for Heroku
 if os.environ.get('PORT'):
-    app.config['PORT'] = int(os.environ['PORT'])
+    app.config['PORT'] = int(os.environ.get('PORT', '5002'))
     app.config['SERVER_NAME'] = os.environ.get('SERVER_NAME')
 
 # Initialize database
@@ -37,7 +37,7 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    return render_template('remixed-4c6e90b9.html')
+    return render_template('index.html')
 
 @app.route('/demo')
 def demo():
